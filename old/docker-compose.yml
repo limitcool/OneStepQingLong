@@ -1,0 +1,18 @@
+version: '3'
+services:
+  qinglong:
+    image: whyour/qinglong:2.8.3
+    container_name: qinglong
+    environment:
+      - hostname=QL
+      - name=QL
+    volumes:
+      - ./config:/config
+      - ./log:/ql/log
+      - ./db:/ql/db
+      - ./scripts:/ql/scripts
+      - ./jbot:/ql/jbot
+    ports:
+     - "5700:5700"
+     - "5701:5701"
+    restart: always
