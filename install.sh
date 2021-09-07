@@ -38,7 +38,9 @@ if command -v docker-compose >/dev/null 2>&1; then
 	echo "docker-compose已安装"
 else
 	echo 'docker-compose 未安装'
-	pip install --upgrade pip
+	pip install pyrsistent==0.15.0
+	pip install --upgrade pip || pip install --upgrade setuptools 
+	pip3 install --upgrade setuptools || pip install --upgrade setuptools 
 	pip3 install docker-compose || pip install docker-compose
 fi
 echo "############开始安装青龙##############"
