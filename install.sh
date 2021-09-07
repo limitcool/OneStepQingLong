@@ -39,7 +39,7 @@ if command -v docker-compose >/dev/null 2>&1; then
 else
 	echo 'docker-compose 未安装'
 	pip install --upgrade pip
-	pip install docker-compose || pip3 install docker-compose
+	pip3 install docker-compose || pip install docker-compose
 fi
 echo "############开始安装青龙##############"
 mkdir qinglong
