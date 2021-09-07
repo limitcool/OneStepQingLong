@@ -17,7 +17,12 @@ os_() {
 		systemctl enable docker
 		systemctl start docker
 	fi
-
+	if ! type docker-compose >/dev/null 2>&1; then
+		echo 'docker-compose 未安装'
+		echo '开始安装Docker-compose....'
+		curl -L "https://github.com/docker/compose/releases/download/v2.0.0-rc.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+		chmod +x /usr/local/bin/docker-compose
+	fi
 	echo "############开始安装青龙##############"
 	mkdir qinglong
 	cd qinglong
