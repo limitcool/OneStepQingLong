@@ -8,8 +8,9 @@ os_() {
 	fi
 	echo "############判断是否安装了docker##############"
 	# author:iimitcool
-	if ! type docker >/dev/null 2>&1; then
-
+	if command -v docker >/dev/null 2>&1; then
+		echo "docker已安装"
+	else
 		echo 'docker 未安装'
 		echo '开始安装Docker....'
 		curl -sSL https://get.daocloud.io/docker | sh
