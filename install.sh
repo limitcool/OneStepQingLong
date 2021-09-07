@@ -25,12 +25,6 @@ os_() {
 		curl -L "https://github.com/docker/compose/releases/download/v2.0.0-rc.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 		chmod +x /usr/local/bin/docker-compose
 	fi
-	echo "############开始安装青龙##############"
-	mkdir qinglong
-	cd qinglong
-	wget https://raw.fastgit.org/limitcool/OneStepQingLong/main/docker-compose.yml
-	docker-compose up -d
-	echo "############青龙安装完成##############"
 }
 if command -v apt >/dev/null 2>&1; then
 	os_ apt
@@ -38,3 +32,9 @@ else
 	yum install -y yum-utils
 	os_ yum
 fi
+echo "############开始安装青龙##############"
+mkdir qinglong
+cd qinglong
+wget https://raw.fastgit.org/limitcool/OneStepQingLong/main/docker-compose.yml
+docker-compose up -d
+echo "############青龙安装完成##############"
