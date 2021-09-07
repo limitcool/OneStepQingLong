@@ -26,19 +26,20 @@ else
 	os_ yum
 fi
 
+if command -v pip >/dev/null 2>&1; then
+	echo "pip已安装"
+else
+	echo "pip未安装"
+	$1 install python python3 python-dev python3-dev -y
+	echo "pip安装完成"
+fi
+
 if command -v docker-compose >/dev/null 2>&1; then
 	echo "docker-compose已安装"
 else
 	echo 'docker-compose 未安装'
-	if command -v pip >/dev/null 2>&1; then
-		echo "pip已安装"
-	else
-		echo "pip未安装"
-		$1 install python python3 python-dev python3-dev -y
-		echo "pip安装完成"
-	fi
 	pip install --upgrade pip
-	pip install docker-compose
+	pip install docker-compose || pip3 install docker-compose
 fi
 echo "############开始安装青龙##############"
 mkdir qinglong
