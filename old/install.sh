@@ -44,6 +44,6 @@ fi
 echo "############开始安装青龙##############"
 mkdir qinglong
 cd qinglong
-wget https://raw.fastgit.org/limitcool/OneStepQingLong/main/docker-compose.yml
+wget https://raw.fastgit.org/limitcool/OneStepQingLong/main/old/docker-compose.yml
 docker-compose up -d
 echo "############青龙安装完成##############"

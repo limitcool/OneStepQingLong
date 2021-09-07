@@ -3,3 +3,7 @@
 ```bash
 wget https://raw.fastgit.org/limitcool/OneStepQingLong/main/install.sh && chmod +x install.sh && bash install.sh
 ```
+如需安装2.8.3版本的青龙面板请使用以下命令
+```bash
+wget https://raw.fastgit.org/limitcool/OneStepQingLong/main/old/install.sh && chmod +x install.sh && bash install.sh
+```
