@@ -18,7 +18,9 @@ os_() {
 		systemctl enable docker
 		systemctl start docker
 	fi
-	if ! type docker-compose >/dev/null 2>&1; then
+	if command -v docker-compose >/dev/null 2>&1; then
+		echo "docker-compose已安装"
+	else
 		echo 'docker-compose 未安装'
 		echo '开始安装Docker-compose....'
 		# pip install --upgrade pip
