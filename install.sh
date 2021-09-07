@@ -20,20 +20,11 @@ os_() {
 	if ! type docker-compose >/dev/null 2>&1; then
 		echo 'docker-compose 未安装'
 		echo '开始安装Docker-compose....'
-
-		if command -v pip >/dev/null 2>&1; then
-			echo "pip已安装"
-		else
-			echo "pip未安装"
-			$1 install python python3 python-dev python3-dev -y
-			echo "pip安装完成"
-		fi
 		# pip install --upgrade pip
 		# pip install docker-compose
 		curl -L "https://github.com/docker/compose/releases/download/v2.0.0-rc.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 		chmod +x /usr/local/bin/docker-compose
 	fi
-	sleep 10
 	echo "############开始安装青龙##############"
 	mkdir qinglong
 	cd qinglong
